@@ -20,6 +20,14 @@ h1, h2, h5 {
     font-weight: bold;
 }
 
+header p.lead {
+    font-size: 1.1rem;
+    /* Add this line for mobile responsiveness */
+    white-space: nowrap; /* Prevent line breaks in desktop */
+}
+
+
+
 header p.lead, .about p.lead, .contact p.lead {
     font-size: 1.1rem;
 }
@@ -113,4 +121,21 @@ html {
         padding: 1.5rem;
         margin-bottom: 1rem;
     }
+
+    header p.lead {
+        white-space: normal; /* Allow line breaks for mobile */
+        text-align: center; /* Center text */
+    }
+
+    /* Optional: Add line breaks after the '|' characters */
+    header p.lead::after {
+        content: ""; /* Use an empty string */
+        display: block; /* Make it a block element */
+        margin: 5px 0; /* Add spacing */
+    }
+
+    header p.lead {
+        content: attr(data-qualities); /* Add this for mobile version */
+    }
+
 }
